@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'org.springframework.spring'
+version '5.3.22-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    optional(project(":spring-webmvc"))
+    optional("javax.servlet:javax.servlet-api")
+    optional(project(":spring-jdbc"))
+    optional(project(":spring-aspects"))
+
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.29'
+    // https://mvnrepository.com/artifact/com.baomidou/mybatis-plus
+    implementation group: 'com.baomidou', name: 'mybatis-plus', version: '3.5.2'
+    // https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-generator
+    implementation group: 'com.baomidou', name: 'mybatis-plus-generator', version: '3.5.2'
+    // https://mvnrepository.com/artifact/org.apache.velocity/velocity-engine-core
+    implementation group: 'org.apache.velocity', name: 'velocity-engine-core', version: '2.3'
+
+    // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
+    implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.1'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.26'
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.13.3'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310
+    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.13.3'
+
+    optional("commons-fileupload:commons-fileupload")
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.16'
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.16'
+
+}
+test {
+    useJUnitPlatform()
+}
